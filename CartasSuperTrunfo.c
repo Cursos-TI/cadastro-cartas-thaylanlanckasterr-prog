@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas com cálculos e comparações avançadas
+// Tema 1 - Comparação por um único atributo escolhido (exemplo: População)
 
 int main() {
     // Variáveis da carta 1
@@ -80,44 +80,26 @@ int main() {
     superPoder2 = (float)populacao2 + areaemKM2 + pib2 + numeroTuristicos2 + pibPerCapita2 + (1.0 / densidadePopulacional2);
 
     //**************************************************************************************
-    // Exibição dos dados da carta 1
-    printf("\n===== DADOS DA CARTA 1 =====\n");
-    printf("Estado: %s\n", estado);
-    printf("Código da Carta: %s\n", codigodacarta);
-    printf("Nome da Cidade: %s\n", nomedacidade);
-    printf("População: %lu\n", populacao);
-    printf("Área em KM²: %.2f\n", areaemKM);
-    printf("PIB: %.2f\n", pib);
-    printf("Número de Pontos Turísticos: %d\n", numeroTuristicos);
-    printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional);
-    printf("PIB per Capita: %.2f\n", pibPerCapita);
-    printf("Super Poder: %.2f\n", superPoder);
+    // Exibição resumida dos dados
+    printf("\n===== RESUMO DAS CARTAS =====\n");
+    printf("Carta 1 - %s (%s)\n", nomedacidade, estado);
+    printf("Carta 2 - %s (%s)\n", nomedacidade2, estado2);
 
     //**************************************************************************************
-    // Exibição dos dados da carta 2
-    printf("\n===== DADOS DA CARTA 2 =====\n");
-    printf("Estado: %s\n", estado2);
-    printf("Código da Carta: %s\n", codigodacarta2);
-    printf("Nome da Cidade: %s\n", nomedacidade2);
-    printf("População: %lu\n", populacao2);
-    printf("Área em KM²: %.2f\n", areaemKM2);
-    printf("PIB: %.2f\n", pib2);
-    printf("Número de Pontos Turísticos: %d\n", numeroTuristicos2);
-    printf("Densidade Populacional: %.2f hab/km²\n", densidadePopulacional2);
-    printf("PIB per Capita: %.2f\n", pibPerCapita2);
-    printf("Super Poder: %.2f\n", superPoder2);
+    // COMPARAÇÃO DE UM ÚNICO ATRIBUTO (exemplo: População)
+    printf("\n===== COMPARAÇÃO DE CARTAS =====\n");
+    printf("Atributo escolhido: População\n\n");
 
-    //**************************************************************************************
-    // COMPARAÇÃO DAS CARTAS
-    printf("\n===== RESULTADOS DAS COMPARAÇÕES =====\n");
+    printf("Carta 1 - %s (%s): %lu habitantes\n", nomedacidade, estado, populacao);
+    printf("Carta 2 - %s (%s): %lu habitantes\n\n", nomedacidade2, estado2, populacao2);
 
-    printf("População: %d\n", populacao > populacao2);
-    printf("Área: %d\n", areaemKM > areaemKM2);
-    printf("PIB: %d\n", pib > pib2);
-    printf("Pontos Turísticos: %d\n", numeroTuristicos > numeroTuristicos2);
-    printf("Densidade Populacional (menor vence): %d\n", densidadePopulacional < densidadePopulacional2);
-    printf("PIB per Capita: %d\n", pibPerCapita > pibPerCapita2);
-    printf("Super Poder: %d\n", superPoder > superPoder2);
+    if (populacao > populacao2) {
+        printf("Resultado: Carta 1 (%s) venceu!\n", nomedacidade);
+    } else if (populacao < populacao2) {
+        printf("Resultado: Carta 2 (%s) venceu!\n", nomedacidade2);
+    } else {
+        printf("Resultado: Empate!\n");
+    }
 
     return 0;
 }
